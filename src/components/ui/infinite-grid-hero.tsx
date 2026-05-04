@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
   motion,
@@ -9,8 +10,29 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 
-export const InfiniteGridHero = () => {
-  const [count, setCount] = useState(0);
+export type HeroCta = {
+  label: string;
+  href: string;
+};
+
+export type InfiniteGridHeroProps = {
+  headline: string;
+  subtitle: string;
+  primaryCta: HeroCta;
+  secondaryCta?: HeroCta;
+  /** Resting opacity of the base grid layer. Default 0.15. */
+  gridOpacity?: number;
+  className?: string;
+};
+
+export const InfiniteGridHero = ({
+  headline,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  gridOpacity = 0.15,
+  className,
+}: InfiniteGridHeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const mouseX = useMotionValue(0);
@@ -42,46 +64,56 @@ export const InfiniteGridHero = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       className={cn(
-        "relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-background"
+        "relative w-full flex-1 flex flex-col items-center justify-center overflow-hidden bg-background",
+        className,
       )}
     >
-      <div className="absolute inset-0 z-0 opacity-[0.05]">
+      <div
+        className="absolute inset-0 z-0"
+        style={{ opacity: gridOpacity }}
+        aria-hidden="true"
+      >
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
       </div>
       <motion.div
         className="absolute inset-0 z-0 opacity-40"
         style={{ maskImage, WebkitMaskImage: maskImage }}
+        aria-hidden="true"
       >
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
       </motion.div>
 
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute right-[-20%] top-[-20%] w-[40%] h-[40%] rounded-full bg-orange-500/40 dark:bg-orange-600/20 blur-[120px]" />
+      <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
+        <div className="absolute right-[-20%] top-[-20%] w-[40%] h-[40%] rounded-full bg-orange-500/40 blur-[120px]" />
         <div className="absolute right-[10%] top-[-10%] w-[20%] h-[20%] rounded-full bg-primary/30 blur-[100px]" />
-        <div className="absolute left-[-10%] bottom-[-20%] w-[40%] h-[40%] rounded-full bg-blue-500/40 dark:bg-blue-600/20 blur-[120px]" />
+        <div className="absolute left-[-10%] bottom-[-20%] w-[40%] h-[40%] rounded-full bg-blue-500/40 blur-[120px]" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-3xl mx-auto space-y-6 pointer-events-none">
-        <div className="space-y-2">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground drop-shadow-sm">
-            The Infinite Grid
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground drop-shadow-sm">
+            {headline}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            Move your cursor to reveal the active grid layer. <br />
-            The pattern scrolls infinitely in the background.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+            {subtitle}
           </p>
         </div>
 
-        <div className="flex gap-4 pointer-events-auto">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all shadow-md active:scale-95"
+        <div className="flex flex-col sm:flex-row gap-3 pointer-events-auto">
+          <Link
+            href={primaryCta.href}
+            className="px-7 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all shadow-md active:scale-[0.98]"
           >
-            Interact ({count})
-          </button>
-          <button className="px-8 py-3 bg-secondary text-secondary-foreground font-semibold rounded-md hover:bg-secondary/80 transition-all active:scale-95">
-            Learn More
-          </button>
+            {primaryCta.label}
+          </Link>
+          {secondaryCta && (
+            <Link
+              href={secondaryCta.href}
+              className="px-7 py-3 border border-border bg-background/60 text-foreground font-semibold rounded-md hover:bg-secondary/60 transition-all active:scale-[0.98]"
+            >
+              {secondaryCta.label}
+            </Link>
+          )}
         </div>
       </div>
     </div>
