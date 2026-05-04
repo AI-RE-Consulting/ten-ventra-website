@@ -20,7 +20,7 @@ export type InfiniteGridHeroProps = {
   subtitle: string;
   primaryCta: HeroCta;
   secondaryCta?: HeroCta;
-  /** Resting opacity of the base grid layer. Default 0.15. */
+  /** Resting opacity of the base grid layer. Default 0.06. */
   gridOpacity?: number;
   className?: string;
 };
@@ -30,7 +30,7 @@ export const InfiniteGridHero = ({
   subtitle,
   primaryCta,
   secondaryCta,
-  gridOpacity = 0.15,
+  gridOpacity = 0.06,
   className,
 }: InfiniteGridHeroProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,7 +76,7 @@ export const InfiniteGridHero = ({
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} patternId="ten-ventra-grid-base" />
       </div>
       <motion.div
-        className="absolute inset-0 z-0 opacity-40"
+        className="absolute inset-0 z-0 opacity-70"
         style={{ maskImage, WebkitMaskImage: maskImage }}
         aria-hidden="true"
       >
