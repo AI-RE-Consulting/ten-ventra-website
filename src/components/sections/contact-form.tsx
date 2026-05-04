@@ -2,6 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 type Status =
   | { kind: "idle" }
   | { kind: "submitting" }
@@ -13,7 +15,6 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus({ kind: "submitting" });
 
     const formData = new FormData(event.currentTarget);
     const payload = {
@@ -22,13 +23,20 @@ export function ContactForm() {
       message: String(formData.get("message") ?? "").trim(),
     };
 
-    if (!payload.name || !payload.email || payload.message.length < 10) {
+    if (
+      !payload.name ||
+      !payload.email ||
+      !EMAIL_RE.test(payload.email) ||
+      payload.message.length < 10
+    ) {
       setStatus({
         kind: "error",
         message: "Please complete every field. Messages must be at least 10 characters.",
       });
       return;
     }
+
+    setStatus({ kind: "submitting" });
 
     try {
       const res = await fetch("/api/contact", {
@@ -54,7 +62,7 @@ export function ContactForm() {
 
   if (status.kind === "success") {
     return (
-      <p className="text-sm text-muted-foreground">
+      <p role="status" className="text-sm text-muted-foreground">
         Thanks — we&apos;ll be in touch.
       </p>
     );
