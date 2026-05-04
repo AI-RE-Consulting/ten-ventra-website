@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
+import { EMAIL_RE } from "@/lib/utils";
 
 type ContactPayload = {
   name?: unknown;
   email?: unknown;
   message?: unknown;
 };
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
   let body: ContactPayload;

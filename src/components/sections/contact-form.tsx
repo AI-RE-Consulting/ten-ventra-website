@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { EMAIL_RE } from "@/lib/utils";
 
 type Status =
   | { kind: "idle" }
