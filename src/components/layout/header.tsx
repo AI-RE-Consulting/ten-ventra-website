@@ -1,29 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 function formatPacificTimestamp(now: Date): string {
-  const dateAndTime = new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("en-US", {
     timeZone: "America/Los_Angeles",
     year: "numeric",
     month: "short",
     day: "2-digit",
     hour: "2-digit",
     minute: "2-digit",
-    hour12: true,
-  }).format(now);
-
-  const seconds = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Los_Angeles",
-    hour: "2-digit",
-    minute: "2-digit",
     second: "2-digit",
-    hour12: false,
-  }).format(now);
-
-  return `${dateAndTime} PT · ${seconds}`;
+    hour12: true,
+  }).format(now) + " PT";
 }
 
 export function Header() {
@@ -37,13 +29,20 @@ export function Header() {
   }, []);
 
   return (
-    <header className="px-6 sm:px-10 py-5 flex items-baseline justify-between text-sm">
+    <header className="px-6 sm:px-10 py-5 flex items-center justify-between text-sm">
       <Link
         href="/"
         aria-label={`${siteConfig.name} — home`}
-        className="font-bold tracking-tight text-foreground"
+        className="inline-flex items-center"
       >
-        {siteConfig.name}
+        <Image
+          src="/images/logo.png"
+          alt={siteConfig.name}
+          width={2606}
+          height={976}
+          priority
+          className="h-10 w-auto mix-blend-multiply"
+        />
       </Link>
       <span
         aria-hidden="true"
