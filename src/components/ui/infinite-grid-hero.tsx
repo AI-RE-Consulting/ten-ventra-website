@@ -64,7 +64,7 @@ export const InfiniteGridHero = ({
       ref={containerRef}
       onMouseMove={handleMouseMove}
       className={cn(
-        "relative w-full flex-1 flex flex-col items-center justify-center overflow-hidden bg-background",
+        "relative w-full min-h-[calc(100svh-5rem)] flex flex-col items-center justify-center overflow-hidden bg-background",
         className,
       )}
     >

@@ -7,8 +7,8 @@ export const siteConfig = {
     headline: "Brokerage, rebuilt.",
     subtitle:
       "A real estate brokerage where humans own trust and AI owns the work.",
-    primaryCta: { label: "Approach", href: "/approach" },
-    secondaryCta: { label: "Contact", href: "/contact" },
+    primaryCta: { label: "Approach", href: "#approach" },
+    secondaryCta: { label: "Contact", href: "#contact" },
   },
   approach: {
     pillars: [
