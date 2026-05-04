@@ -68,6 +68,7 @@ export function ContactForm() {
   }
 
   const isSubmitting = status.kind === "submitting";
+  const isError = status.kind === "error";
   const fieldClass =
     "w-full rounded-md border border-border bg-background px-3.5 py-3 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
@@ -83,6 +84,7 @@ export function ContactForm() {
         autoComplete="name"
         placeholder="Name"
         required
+        aria-invalid={isError}
         className={fieldClass}
       />
 
@@ -96,6 +98,7 @@ export function ContactForm() {
         autoComplete="email"
         placeholder="Email"
         required
+        aria-invalid={isError}
         className={fieldClass}
       />
 
@@ -109,6 +112,7 @@ export function ContactForm() {
         required
         minLength={10}
         rows={5}
+        aria-invalid={isError}
         className={`${fieldClass} resize-vertical min-h-[140px]`}
       />
 
