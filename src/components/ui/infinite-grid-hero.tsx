@@ -73,14 +73,14 @@ export const InfiniteGridHero = ({
         style={{ opacity: gridOpacity }}
         aria-hidden="true"
       >
-        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} patternId="ten-ventra-grid-base" />
       </div>
       <motion.div
         className="absolute inset-0 z-0 opacity-40"
         style={{ maskImage, WebkitMaskImage: maskImage }}
         aria-hidden="true"
       >
-        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} patternId="ten-ventra-grid-spotlight" />
       </motion.div>
 
       <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
@@ -123,15 +123,17 @@ export const InfiniteGridHero = ({
 const GridPattern = ({
   offsetX,
   offsetY,
+  patternId,
 }: {
   offsetX: ReturnType<typeof useMotionValue<number>>;
   offsetY: ReturnType<typeof useMotionValue<number>>;
+  patternId: string;
 }) => {
   return (
     <svg className="w-full h-full">
       <defs>
         <motion.pattern
-          id="grid-pattern"
+          id={patternId}
           width="40"
           height="40"
           patternUnits="userSpaceOnUse"
@@ -147,7 +149,7 @@ const GridPattern = ({
           />
         </motion.pattern>
       </defs>
-      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+      <rect width="100%" height="100%" fill={`url(#${patternId})`} />
     </svg>
   );
 };
