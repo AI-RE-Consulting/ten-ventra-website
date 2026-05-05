@@ -5,7 +5,7 @@ export function Approach() {
   return (
     <section
       id="approach"
-      className="px-6 sm:px-10 pt-24 sm:pt-32 pb-12 sm:pb-16 bg-background scroll-mt-20"
+      className="px-6 sm:px-10 pt-12 sm:pt-16 pb-12 sm:pb-16 bg-background scroll-mt-20"
     >
       <div className="max-w-5xl mx-auto">
         <Reveal>
