@@ -90,6 +90,10 @@ export const InfiniteGridHero = ({
       </div>
 
       <div
+        className="absolute inset-x-0 top-0 h-[20%] bg-gradient-to-t from-transparent to-background z-[1] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
         className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-b from-transparent to-background z-[1] pointer-events-none"
         aria-hidden="true"
       />
