@@ -107,14 +107,14 @@ export const InfiniteGridHero = ({
         <div className="flex flex-col sm:flex-row gap-3 pointer-events-auto">
           <Link
             href={primaryCta.href}
-            className="px-7 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all shadow-md active:scale-[0.98]"
+            className="px-7 py-3 bg-primary text-primary-foreground font-semibold rounded-md shadow-md transition-all hover:bg-primary/90 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98]"
           >
             {primaryCta.label}
           </Link>
           {secondaryCta && (
             <Link
               href={secondaryCta.href}
-              className="px-7 py-3 border border-border bg-background/60 text-foreground font-semibold rounded-md hover:bg-secondary/60 transition-all active:scale-[0.98]"
+              className="px-7 py-3 border border-border bg-background/60 text-foreground font-semibold rounded-md transition-all hover:border-red-600/50 hover:bg-background active:scale-[0.98]"
             >
               {secondaryCta.label}
             </Link>
