@@ -32,10 +32,6 @@ export const siteConfig = {
   contact: {
     intro:
       "For deal opportunities, partnerships, or general inquiries.",
-    company: {
-      label: "Company",
-      body: "An AI-native real estate brokerage operating across Miami and Los Angeles.",
-    },
   },
 } as const;
 

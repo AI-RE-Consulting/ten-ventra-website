@@ -19,26 +19,11 @@ export function Contact() {
             {siteConfig.contact.intro}
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Reveal className="h-full">
-            <div className="h-full border border-border rounded-lg p-6 sm:p-8">
-              <p className="font-mono text-xs text-muted-foreground mb-3">
-                {siteConfig.contact.company.label}
-              </p>
-              <h2 className="text-lg font-bold mb-3 text-foreground">
-                {siteConfig.name}
-              </h2>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {siteConfig.contact.company.body}
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.12} className="h-full">
-            <div className="h-full border border-border rounded-lg p-6 sm:p-8">
-              <ContactForm />
-            </div>
-          </Reveal>
-        </div>
+        <Reveal delay={0.12}>
+          <div className="border border-border rounded-lg p-6 sm:p-8 max-w-2xl">
+            <ContactForm />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

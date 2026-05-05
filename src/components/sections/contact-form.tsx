@@ -19,6 +19,7 @@ export function ContactForm() {
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
+      company: String(formData.get("company") ?? "").trim(),
       message: String(formData.get("message") ?? "").trim(),
     };
 
@@ -99,6 +100,18 @@ export function ContactForm() {
         placeholder="Email"
         required
         aria-invalid={isError}
+        className={fieldClass}
+      />
+
+      <label className="sr-only" htmlFor="contact-company">
+        Company
+      </label>
+      <input
+        id="contact-company"
+        name="company"
+        type="text"
+        autoComplete="organization"
+        placeholder="Company (optional)"
         className={fieldClass}
       />
 

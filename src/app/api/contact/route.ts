@@ -4,6 +4,7 @@ import { EMAIL_RE } from "@/lib/utils";
 type ContactPayload = {
   name?: unknown;
   email?: unknown;
+  company?: unknown;
   message?: unknown;
 };
 
@@ -20,6 +21,7 @@ export async function POST(request: Request) {
 
   const name = typeof body.name === "string" ? body.name.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
+  const company = typeof body.company === "string" ? body.company.trim() : "";
   const message = typeof body.message === "string" ? body.message.trim() : "";
 
   if (!name || !email || !message) {
@@ -42,7 +44,7 @@ export async function POST(request: Request) {
   }
 
   // TODO(resend): replace this stub with a real Resend send call.
-  console.log("[contact] submission received", { name, email, message });
+  console.log("[contact] submission received", { name, email, company, message });
 
   return NextResponse.json({ ok: true });
 }
