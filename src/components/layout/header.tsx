@@ -26,7 +26,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="px-6 sm:px-10 py-3 flex items-center justify-between text-sm">
+    <header className="px-6 sm:px-10 py-2 flex items-center justify-between text-sm">
       <Link
         href="/"
         aria-label={`${siteConfig.name} — home`}
