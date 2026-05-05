@@ -71,7 +71,7 @@ export function ContactForm() {
   const isSubmitting = status.kind === "submitting";
   const isError = status.kind === "error";
   const fieldClass =
-    "w-full rounded-md border border-border bg-background px-3.5 py-3 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+    "w-full border border-border bg-background px-3.5 py-3 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3.5" noValidate>
@@ -138,7 +138,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="self-start px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md transition-all hover:bg-primary/90 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="self-start px-6 py-3 bg-primary text-primary-foreground text-xs uppercase tracking-[0.18em] transition-all hover:bg-primary/90 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Sending…" : "Send message"}
       </button>

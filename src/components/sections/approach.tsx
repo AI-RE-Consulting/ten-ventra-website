@@ -21,13 +21,13 @@ export function Approach() {
               delay={index * 0.12}
               className="border-t border-foreground pt-5"
             >
-              <p className="font-mono text-xs text-muted-foreground mb-3">
+              <p className="text-xs text-red-600 mb-3">
                 {pillar.number}
               </p>
-              <h2 className="text-lg font-bold mb-2 text-foreground">
+              <h2 className="text-base mb-2 text-foreground">
                 {pillar.name}
               </h2>
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <p className="text-xs leading-relaxed text-muted-foreground">
                 {pillar.body}
               </p>
             </Reveal>

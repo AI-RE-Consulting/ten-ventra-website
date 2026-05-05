@@ -25,6 +25,18 @@ export type InfiniteGridHeroProps = {
   className?: string;
 };
 
+function renderHeadline(text: string) {
+  if (text.endsWith(".")) {
+    return (
+      <>
+        {text.slice(0, -1)}
+        <span className="text-red-600">.</span>
+      </>
+    );
+  }
+  return text;
+}
+
 export const InfiniteGridHero = ({
   headline,
   subtitle,
@@ -84,9 +96,8 @@ export const InfiniteGridHero = ({
       </motion.div>
 
       <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true">
-        <div className="absolute right-[-20%] top-[-20%] w-[40%] h-[40%] rounded-full bg-orange-500/40 blur-[120px]" />
-        <div className="absolute right-[10%] top-[-10%] w-[20%] h-[20%] rounded-full bg-primary/30 blur-[100px]" />
-        <div className="absolute left-[-10%] bottom-[-20%] w-[40%] h-[40%] rounded-full bg-blue-500/40 blur-[120px]" />
+        <div className="absolute right-[-20%] top-[-20%] w-[40%] h-[40%] rounded-full bg-red-600/12 blur-[120px]" />
+        <div className="absolute left-[-10%] bottom-[-20%] w-[40%] h-[40%] rounded-full bg-amber-500/10 blur-[120px]" />
       </div>
 
       <div
@@ -98,27 +109,27 @@ export const InfiniteGridHero = ({
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-3xl mx-auto space-y-6 pointer-events-none">
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground drop-shadow-sm">
-            {headline}
+      <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-3xl mx-auto space-y-8 pointer-events-none">
+        <div className="space-y-5">
+          <h1 className="text-5xl md:text-6xl font-normal tracking-[-0.04em] leading-[1.05] text-foreground">
+            {renderHeadline(headline)}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 pointer-events-auto">
+        <div className="flex flex-col sm:flex-row gap-2.5 pointer-events-auto">
           <Link
             href={primaryCta.href}
-            className="px-7 py-3 bg-primary text-primary-foreground font-semibold rounded-md shadow-md transition-all hover:bg-primary/90 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98]"
+            className="px-6 py-3 bg-primary text-primary-foreground text-xs uppercase tracking-[0.18em] transition-all hover:bg-primary/90 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98]"
           >
             {primaryCta.label}
           </Link>
           {secondaryCta && (
             <Link
               href={secondaryCta.href}
-              className="px-7 py-3 border border-border bg-background/60 text-foreground font-semibold rounded-md transition-all hover:border-red-600/50 hover:bg-background active:scale-[0.98]"
+              className="px-6 py-3 border border-foreground bg-transparent text-foreground text-xs uppercase tracking-[0.18em] transition-all hover:border-red-600 hover:text-red-700 active:scale-[0.98]"
             >
               {secondaryCta.label}
             </Link>

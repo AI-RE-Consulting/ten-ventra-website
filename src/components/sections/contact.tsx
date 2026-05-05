@@ -20,7 +20,7 @@ export function Contact() {
           </p>
         </Reveal>
         <Reveal delay={0.12}>
-          <div className="border border-border rounded-lg p-6 sm:p-8 text-left">
+          <div className="border border-border p-6 sm:p-8 text-left">
             <ContactForm />
           </div>
         </Reveal>
