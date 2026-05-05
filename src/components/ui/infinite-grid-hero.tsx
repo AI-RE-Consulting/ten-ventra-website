@@ -89,6 +89,11 @@ export const InfiniteGridHero = ({
         <div className="absolute left-[-10%] bottom-[-20%] w-[40%] h-[40%] rounded-full bg-blue-500/40 blur-[120px]" />
       </div>
 
+      <div
+        className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-b from-transparent to-background z-[1] pointer-events-none"
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-3xl mx-auto space-y-6 pointer-events-none">
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground drop-shadow-sm">

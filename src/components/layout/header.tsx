@@ -41,7 +41,7 @@ export function Header() {
           width={2606}
           height={976}
           priority
-          className="h-10 w-auto mix-blend-multiply"
+          className="h-14 w-auto mix-blend-multiply"
         />
       </Link>
       <span

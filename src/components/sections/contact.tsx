@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="px-6 sm:px-10 py-24 sm:py-32 bg-background scroll-mt-20"
+      className="px-6 sm:px-10 pt-12 sm:pt-16 pb-24 sm:pb-32 bg-background scroll-mt-20"
     >
       <div className="max-w-xl mx-auto">
         <Reveal>
