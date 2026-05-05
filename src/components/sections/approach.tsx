@@ -9,7 +9,7 @@ export function Approach() {
     >
       <div className="max-w-5xl mx-auto">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground mb-12">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground mb-12 text-center">
             Approach
           </p>
         </Reveal>
