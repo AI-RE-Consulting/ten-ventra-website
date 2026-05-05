@@ -122,7 +122,7 @@ export const InfiniteGridHero = ({
         <div className="flex flex-col sm:flex-row gap-2.5 pointer-events-auto">
           <Link
             href={primaryCta.href}
-            className="px-6 py-3 bg-primary text-primary-foreground text-xs uppercase tracking-[0.18em] transition-all hover:bg-primary/90 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98]"
+            className="px-6 py-3 bg-primary text-primary-foreground text-xs uppercase tracking-[0.18em] transition-all hover:bg-primary/90 hover:text-red-500 hover:ring-2 hover:ring-red-600/40 active:scale-[0.98]"
           >
             {primaryCta.label}
           </Link>
