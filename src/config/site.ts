@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "Ten Ventra",
   description:
-    "A real estate brokerage where humans own trust and AI owns the work.",
+    "A real estate brokerage where humans own the relationship and AI owns the work.",
   url: "https://tenventra.ai",
   hero: {
     headline: "Brokerage, rebuilt.",
     subtitle:
-      "A real estate brokerage where humans own trust and AI owns the work.",
+      "A real estate brokerage where humans own the relationship and AI owns the work.",
     primaryCta: { label: "Approach", href: "#approach" },
     secondaryCta: { label: "Contact", href: "#contact" },
   },
@@ -15,7 +15,7 @@ export const siteConfig = {
       {
         number: "01",
         name: "Relationships",
-        body: "Brokerage is fundamentally human. Owners, buyers, and lenders move on trust — and trust is built by people, not platforms.",
+        body: "Brokerage runs on trust. Owners, buyers, and lenders close deals with people, not platforms. That's why we amplify the human layer while rebuilding the stack underneath it.",
       },
       {
         number: "02",
@@ -25,7 +25,7 @@ export const siteConfig = {
       {
         number: "03",
         name: "Execution",
-        body: "Software absorbs the operational weight of every deal so brokers stay focused on the conversations that move transactions forward.",
+        body: "Materials, follow-ups, comps, CRM. Software handles the work so brokers stay focused on the conversations that move deals forward.",
       },
     ],
   },
