@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Fragment_Mono } from "next/font/google";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import {
+  Inter,
+  Fragment_Mono,
+  Cormorant_Garamond,
+  Fustat,
+  Space_Grotesk,
+} from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -14,6 +18,24 @@ const fragmentMono = Fragment_Mono({
   variable: "--font-fragment-mono",
   subsets: ["latin"],
   weight: "400",
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const fustat = Fustat({
+  variable: "--font-fustat",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -37,12 +59,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fragmentMono.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${fragmentMono.variable} ${cormorant.variable} ${fustat.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-mono">
-        <Header />
-        <main className="flex-1 flex flex-col">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

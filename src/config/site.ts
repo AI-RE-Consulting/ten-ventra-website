@@ -14,18 +14,18 @@ export const siteConfig = {
     pillars: [
       {
         number: "01",
-        name: "Relationships",
-        body: "Brokerage runs on trust. Owners, buyers, and lenders close deals with people, not platforms. That's why we amplify the human layer while rebuilding the stack underneath it.",
+        name: "Data",
+        body: "Proprietary signals from sources others don't have, tuned to your buy-box. The signal you'd build in-house, without the build.",
       },
       {
         number: "02",
-        name: "Sourcing",
-        body: "We surface the right opportunities before the market does, matching properties to specific demand and identifying owners likely to transact.",
+        name: "Relationships",
+        body: "We run the broker and cold-caller bench for you. Cold calls, warm intros, off-market sourcing — first-look deals land on your desk.",
       },
       {
         number: "03",
-        name: "Execution",
-        body: "Materials, follow-ups, comps, CRM. Software handles the work so brokers stay focused on the conversations that move deals forward.",
+        name: "Intelligence",
+        body: "An AI built into the platform, fluent in your buy-box. Talk it through; let it work.",
       },
     ],
   },
