@@ -149,10 +149,10 @@ function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.05 }}
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium tracking-[-0.04em] text-white leading-[0.95]"
+              className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-[-0.03em] text-white leading-[1.05]"
               style={{ fontFamily: DISPLAY }}
             >
-              Every part of brokerage.{" "}
+              Real estate deal sourcing,{" "}
               <span
                 className="bg-clip-text text-transparent"
                 style={{
@@ -160,17 +160,17 @@ function Hero() {
                     "linear-gradient(to right, #ffffff, #fca5a5, #930002)",
                 }}
               >
-                Re-engineered.
+                done for you.
               </span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15 }}
-              className="text-lg text-white/70 max-w-lg leading-relaxed"
+              className="text-2xl md:text-3xl text-white/70 max-w-xl leading-snug"
               style={{ fontFamily: BODY }}
             >
-              {siteConfig.description}
+              {siteConfig.hero.subtitle}
             </motion.p>
           </div>
 
@@ -430,7 +430,7 @@ function GlassCard({
           {name}
         </h3>
         <p
-          className="text-sm md:text-base text-white/65 leading-relaxed"
+          className="text-base md:text-lg text-white/65 leading-relaxed"
           style={{ fontFamily: BODY }}
         >
           {body}
@@ -484,7 +484,7 @@ function Approach() {
             className="text-5xl md:text-6xl font-medium tracking-[-0.03em] text-white leading-tight"
             style={{ fontFamily: DISPLAY }}
           >
-            The brokerage,{" "}
+            A sharper way to{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{
@@ -492,9 +492,8 @@ function Approach() {
                   "linear-gradient(to right, #fca5a5, #930002)",
               }}
             >
-              re-engineered
-            </span>{" "}
-            for what comes next.
+              source deals.
+            </span>
           </h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -510,27 +509,27 @@ function Approach() {
 const V4_CAPABILITIES = [
   {
     title: "Buy-box matching",
-    body: "Every property scored against your buy-box, so only true fits reach you.",
+    body: "Every property scored against your buy-box, so the closest fits surface first.",
   },
   {
     title: "Owner signals",
-    body: "Surface likely sellers using ownership, property, and distress signals before a listing ever appears.",
+    body: "Identify likely sellers from ownership, property, and distress data, often before anything hits the market.",
   },
   {
-    title: "Auto-comparables",
-    body: "Comp sets generated for any property in seconds, not hours.",
+    title: "Comparables",
+    body: "Comp sets pulled together in a fraction of the time it takes by hand.",
   },
   {
-    title: "Smarter outreach",
-    body: "Outreach drafted for every contact — personalised, owner by owner, ready to send.",
+    title: "Outreach drafting",
+    body: "Personalized outreach drafted owner by owner, ready for your review.",
   },
   {
-    title: "Pipeline execution",
-    body: "Keep conversations, notes, and next steps moving without operational drag.",
+    title: "Pipeline tracking",
+    body: "Conversations, notes, and next steps, all in one place.",
   },
   {
-    title: "Material prep",
-    body: "Assemble the briefs, summaries, and supporting materials needed to move quickly.",
+    title: "Deal materials",
+    body: "Briefs, summaries, and supporting docs to help you move quickly.",
   },
 ];
 
@@ -562,10 +561,10 @@ function Capabilities() {
             Capabilities
           </p>
           <h2
-            className="text-4xl md:text-5xl font-medium tracking-[-0.03em] text-white leading-tight"
+            className="text-5xl md:text-6xl font-medium tracking-[-0.03em] text-white leading-tight"
             style={{ fontFamily: DISPLAY }}
           >
-            What the platform does today.
+            What the platform supports.
           </h2>
         </motion.div>
         <div
@@ -590,13 +589,13 @@ function Capabilities() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3
-                    className="text-xl font-semibold tracking-tight text-white mt-4"
+                    className="text-2xl font-semibold tracking-tight text-white mt-4"
                     style={{ fontFamily: DISPLAY }}
                   >
                     {c.title}
                   </h3>
                   <p
-                    className="mt-2 text-sm text-white/65 leading-relaxed"
+                    className="mt-2 text-base md:text-lg text-white/65 leading-relaxed"
                     style={{ fontFamily: BODY }}
                   >
                     {c.body}

@@ -4,9 +4,9 @@ export const siteConfig = {
     "A real estate brokerage where humans own the relationship and AI owns the work.",
   url: "https://tenventra.ai",
   hero: {
-    headline: "Brokerage, rebuilt.",
+    headline: "Real estate deal sourcing, done for you.",
     subtitle:
-      "A real estate brokerage where humans own the relationship and AI owns the work.",
+      "Tell us your buy-box. We find the opportunities, start the conversations, and bring you the deals worth pursuing.",
     primaryCta: { label: "Approach", href: "#approach" },
     secondaryCta: { label: "Contact", href: "#contact" },
   },
@@ -20,12 +20,12 @@ export const siteConfig = {
       {
         number: "02",
         name: "Relationships",
-        body: "We run the broker and cold-caller bench for you. Cold calls, warm intros, off-market sourcing — first-look deals land on your desk.",
+        body: "Cold calls, warm intros, and off-market sourcing, handled, so you see deals early.",
       },
       {
         number: "03",
         name: "Intelligence",
-        body: "An AI built into the platform, fluent in your buy-box. Talk it through; let it work.",
+        body: "Technology that helps match opportunities to your criteria, surface owner signals, and support outreach.",
       },
     ],
   },
