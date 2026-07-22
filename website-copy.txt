@@ -1,0 +1,142 @@
+TEN VENTRA — WEBSITE COPY
+=========================
+Source of truth: the live homepage (src/app/(home)/page.tsx → src/app/v4/page.tsx),
+with shared values from src/config/site.ts.
+Generated for copy review / handoff.
+
+
+-------------------------------------------------------------------------------
+GLOBAL / META
+-------------------------------------------------------------------------------
+Site name:      Ten Ventra
+Tagline:        A real estate brokerage where humans own the relationship and AI owns the work.
+URL:            https://tenventra.ai
+Contact email:  hello@tenventra.ai
+
+
+-------------------------------------------------------------------------------
+1. NAVIGATION (header)
+-------------------------------------------------------------------------------
+Logo:           Ten Ventra
+Nav links:      Approach
+                Capabilities
+                Contact
+Button (CTA):   Get in touch
+
+
+-------------------------------------------------------------------------------
+2. HERO
+-------------------------------------------------------------------------------
+Headline:       Every part of brokerage. Re-engineered.
+                ("Re-engineered." is set in the red/white gradient accent.)
+
+Subtitle:       A real estate brokerage where humans own the relationship
+                and AI owns the work.
+
+— Product preview card (illustrative data shown in hero) —
+Property:       2921 West Blvd
+                Los Angeles, CA 90016
+
+Section label:  Match Signals
+
+Distress rating: 61/100 — Moderate
+  • Owner death on title
+    Recorded 8 months ago — heirs not yet vested            (8 mo)
+  • Missed property tax payment
+    Delinquent since Aug 2024 — penalty accruing             ($25,600)
+  • Code enforcement complaint
+    LADBS habitability complaint filed 6 weeks ago           (6 wk)
+
+Buy-box rating: 94/100 — Strong
+  • Permit activity
+    ADU eligibility confirmed · 8-unit potential             (8 ADU)
+  • Comparable sales
+    4 closed within 0.6 mi · last 9 mo                       ($418/sf avg)
+  • Cap rate
+    Underwritten 5.4% vs. submarket 4.8%                     (5.4%)
+  • Recent leases
+    3 new leases at 11–14% premium to in-place               (+12% MTM)
+
+Card button:    Get owner contacts
+
+
+-------------------------------------------------------------------------------
+3. APPROACH
+-------------------------------------------------------------------------------
+Eyebrow:        Approach
+Heading:        The brokerage, re-engineered for what comes next.
+                ("re-engineered" is set in the red gradient accent.)
+
+01 — Data
+Proprietary signals from sources others don't have, tuned to your buy-box.
+The signal you'd build in-house, without the build.
+
+02 — Relationships
+We run the broker and cold-caller bench for you. Cold calls, warm intros,
+off-market sourcing — first-look deals land on your desk.
+
+03 — Intelligence
+An AI built into the platform, fluent in your buy-box. Talk it through;
+let it work.
+
+
+-------------------------------------------------------------------------------
+4. CAPABILITIES
+-------------------------------------------------------------------------------
+Eyebrow:        Capabilities
+Heading:        What the platform does today.
+
+01  Buy-box matching
+    Every property scored against your buy-box, so only true fits reach you.
+
+02  Owner signals
+    Surface likely sellers using ownership, property, and distress signals
+    before a listing ever appears.
+
+03  Auto-comparables
+    Comp sets generated for any property in seconds, not hours.
+
+04  Smarter outreach
+    Outreach drafted for every contact — personalised, owner by owner,
+    ready to send.
+
+05  Pipeline execution
+    Keep conversations, notes, and next steps moving without operational drag.
+
+06  Material prep
+    Assemble the briefs, summaries, and supporting materials needed to
+    move quickly.
+
+
+-------------------------------------------------------------------------------
+5. CONTACT
+-------------------------------------------------------------------------------
+Eyebrow:        Contact
+Heading:        Let's talk about your deal.
+Intro:          For deal opportunities, partnerships, or general inquiries.
+
+Email card label:   Email us
+Email:              hello@tenventra.ai
+
+
+-------------------------------------------------------------------------------
+6. FOOTER
+-------------------------------------------------------------------------------
+© [current year] Ten Ventra, Inc.
+
+
+-------------------------------------------------------------------------------
+APPENDIX — Contact form copy (used in alternate section component)
+-------------------------------------------------------------------------------
+Note: The live v4 homepage uses a simple email card (above). An alternate
+contact section (src/components/sections/contact-form.tsx) contains a form
+with this copy:
+
+Fields (placeholders):  Name
+                        Email
+                        Company (optional)
+                        Message
+Submit button:          Send message  /  Sending…  (while submitting)
+Success message:        Thanks — we'll be in touch.
+Validation error:       Please complete every field. Messages must be at
+                        least 10 characters.
