@@ -1,40 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ten Ventra — tenventra.ai
 
-## Getting Started
+Scroll-driven site: a Mapbox satellite globe dives into the Los Angeles off-market
+chapter, flies to the Phoenix on-market chapter, and lands on contact. Built with
+Next.js 16, React 19, Tailwind 4, motion, Lenis, and mapbox-gl.
 
-First, run the development server:
+All property data on the site is fictional: real street names, invented numbers
+and figures. The ADU feasibility reports in `public/reports/` are hand-drawn
+vector recreations of engine output with parcel numbers and coordinates removed.
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requires `NEXT_PUBLIC_MAPBOX_TOKEN` in `.env.local` (never committed). Without it
+the site renders the static fallback. The same variable must be set in the Vercel
+project (Production and Preview) with a URL-restricted Mapbox token.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm typecheck
+pnpm test
+pnpm build
+```
 
-## Components
+## Structure
 
-The `components/` directory holds a wide range of options sourced from [21st.dev](https://21st.dev), and we're actively experimenting with the order and combination of these building blocks. Expect the lineup, layout, and composition of sections to change as we iterate on what works best for the site — components may be added, removed, swapped, or rearranged frequently while we explore different approaches.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/components/journey/` — the scroll journey (Journey.tsx orchestrates; a
+  MotionValue progress in [0,1] drives the camera, overlays, and text).
+- `src/lib/cameraPath.ts` — camera keyframes and easing; `src/lib/chapters.ts` —
+  chapter rest points and snap. Timeline constants are also mirrored in
+  ChapterOverlay/Journey/Washes/Nav/ContactOverlay: retune them together.
+- `src/data/` — copy and fictional property data.
