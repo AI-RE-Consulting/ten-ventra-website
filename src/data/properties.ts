@@ -23,15 +23,22 @@ export interface Property {
 // single-family dwelling on the same lot and Phoenix prohibits ADUs on
 // multifamily lots, so the Phoenix act is single-family listings and its
 // report cites HB 2720.
+//
+// Pin placement (tuned 2026-09-05 against the chapter rests in lib/cameraPath): on
+// phones the rail is a translucent bottom sheet over the lower 58vh and anything
+// behind it glows through, so every pin must sit in the visible strip above the
+// sheet or be fully off-screen; on desktop every pin must clear the left rail and
+// the set should read as a spread, non-collinear cluster. Re-check both layouts
+// after moving a pin or retuning the camera.
 export const PROPERTIES: Property[] = [
-  // — Off-market · mid-city Los Angeles (fictional) —
+  // — Off-market · central Los Angeles, Mid-City to West Adams (fictional) —
   {
     id: "off-1",
     kind: "off",
-    lng: -118.3298,
-    lat: 34.0301,
-    address: "2921 West Blvd",
-    cityState: "Los Angeles, CA 90016",
+    lng: -118.3223,
+    lat: 34.0482,
+    address: "1256 S Victoria Ave",
+    cityState: "Los Angeles, CA 90019",
     featured: true,
     highlight: "Owner death on title · 8 mo",
     stats: [
@@ -51,9 +58,9 @@ export const PROPERTIES: Property[] = [
   {
     id: "off-2",
     kind: "off",
-    lng: -118.3612,
-    lat: 34.0432,
-    address: "1834 S Cochran Ave",
+    lng: -118.3549,
+    lat: 34.0481,
+    address: "1258 S Cochran Ave",
     cityState: "Los Angeles, CA 90019",
     highlight: "Vacancy · 3 of 10 units",
     stats: [
@@ -71,8 +78,8 @@ export const PROPERTIES: Property[] = [
   {
     id: "off-3",
     kind: "off",
-    lng: -118.3455,
-    lat: 34.0559,
+    lng: -118.3388,
+    lat: 34.0555,
     address: "958 S Longwood Ave",
     cityState: "Los Angeles, CA 90019",
     highlight: "Tax delinquent · 2 yr",
@@ -91,31 +98,10 @@ export const PROPERTIES: Property[] = [
   {
     id: "off-4",
     kind: "off",
-    lng: -118.3341,
-    lat: 34.0384,
-    address: "2210 S Rimpau Blvd",
-    cityState: "Los Angeles, CA 90016",
-    highlight: "Probate filing · 4 mo",
-    stats: [
-      { label: "Units", value: "9" },
-      { label: "Owner age", value: "71" },
-      { label: "SB-1211 ADU", value: "3 units addable" },
-      { label: "SB-9 lot split", value: "Eligible" },
-      { label: "Probate filing", value: "4 mo" },
-    ],
-    scores: [
-      { label: "Distress", value: 38, tone: "red" },
-      { label: "Buy-box", value: 86, tone: "green" },
-    ],
-    report: { src: "/reports/adu-3-88x110.svg", cta: "View SB-1211 feasibility report" },
-  },
-  {
-    id: "off-5",
-    kind: "off",
-    lng: -118.3688,
-    lat: 34.0329,
-    address: "5316 W Adams Blvd",
-    cityState: "Los Angeles, CA 90016",
+    lng: -118.2987,
+    lat: 34.0317,
+    address: "2536 S Normandie Ave",
+    cityState: "Los Angeles, CA 90007",
     highlight: "Code enforcement · 9 wk",
     stats: [
       { label: "Units", value: "14" },
@@ -133,10 +119,10 @@ export const PROPERTIES: Property[] = [
   {
     id: "on-1",
     kind: "on",
-    lng: -112.083,
-    lat: 33.5115,
-    address: "5237 N 7th Ave",
-    cityState: "Phoenix, AZ 85013",
+    lng: -112.0716,
+    lat: 33.5128,
+    address: "5237 N 2nd St",
+    cityState: "Phoenix, AZ 85012",
     featured: true,
     highlight: "$585K · 6,500 sq ft · 2 ADUs",
     stats: [
@@ -152,9 +138,9 @@ export const PROPERTIES: Property[] = [
   {
     id: "on-2",
     kind: "on",
-    lng: -112.1,
-    lat: 33.518,
-    address: "5947 N 19th Ave",
+    lng: -112.0979,
+    lat: 33.4877,
+    address: "3416 N 18th Ave",
     cityState: "Phoenix, AZ 85015",
     highlight: "$740K · 9,200 sq ft · 2 ADUs",
     stats: [
@@ -169,10 +155,10 @@ export const PROPERTIES: Property[] = [
   {
     id: "on-3",
     kind: "on",
-    lng: -112.064,
-    lat: 33.5055,
-    address: "544 E Montecito Ave",
-    cityState: "Phoenix, AZ 85012",
+    lng: -112.0497,
+    lat: 33.4989,
+    address: "1522 E Campbell Ave",
+    cityState: "Phoenix, AZ 85014",
     justListed: true,
     highlight: "$865K · 10,400 sq ft · 2 ADUs",
     stats: [
@@ -187,10 +173,10 @@ export const PROPERTIES: Property[] = [
   {
     id: "on-4",
     kind: "on",
-    lng: -112.02,
-    lat: 33.492,
-    address: "2841 E Clarendon Ave",
-    cityState: "Phoenix, AZ 85016",
+    lng: -112.0228,
+    lat: 33.4773,
+    address: "2841 E Palm Ln",
+    cityState: "Phoenix, AZ 85008",
     justListed: true,
     highlight: "$598K · 8,700 sq ft · 2 ADUs",
     stats: [

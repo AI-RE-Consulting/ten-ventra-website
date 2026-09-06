@@ -5,8 +5,8 @@ const LA = { lngMin: -118.45, lngMax: -118.25, latMin: 33.98, latMax: 34.1 };
 const PHX = { lngMin: -112.15, lngMax: -111.98, latMin: 33.43, latMax: 33.55 };
 
 describe("PROPERTIES", () => {
-  it("has 5 off-market and 4 on-market properties", () => {
-    expect(PROPERTIES.filter((p) => p.kind === "off")).toHaveLength(5);
+  it("has 4 off-market and 4 on-market properties", () => {
+    expect(PROPERTIES.filter((p) => p.kind === "off")).toHaveLength(4);
     expect(PROPERTIES.filter((p) => p.kind === "on")).toHaveLength(4);
   });
 
