@@ -36,27 +36,27 @@ export const COPY = {
     title: "Tell us your buy-box.", // chosen 2026-08-12
     intro: "For deal opportunities, partnerships, or general inquiries.",
     cta: "Get in touch",
-    // Prefilled draft behind the button (chosen 2026-09-25). Plain text, one entry per line;
-    // the trailing space after each colon leaves room to type.
+    // Prefilled draft behind the button (chosen 2026-09-25). Plain text, one entry per line.
+    // The blank lines up top are for the visitor's own note; the trailing space after each
+    // colon leaves room to type.
     email: {
       subject: "My buy-box for Ten Ventra",
       body: [
-        "Hi Ten Ventra,",
         "",
-        "Here's my buy-box:",
+        "",
+        "",
+        "_".repeat(26), // ~250px, stays on one line even on an iPhone SE
+        "Feel free to fill this out, or we can just chat live.",
         "",
         "• Name / company: ",
         "• Phone: ",
         "• Markets (cities, counties or zips): ",
-        "• Asset types (single-family, multifamily, land...): ",
+        "• Asset types (multifamily, retail, office...): ",
         "• Price range: ",
-        "• Strategy (flip, hold, ADU / lot split, build): ",
-        "• Off market, on market, or both: ",
+        "• Strategy (core-plus, value-add, development): ",
         "• Must-haves or deal-breakers: ",
         "",
         "Good times for a 20-minute call: ",
-        "",
-        "Thanks,",
       ],
     },
     other: "Something else?", // precedes the plain address, which opens a blank email
