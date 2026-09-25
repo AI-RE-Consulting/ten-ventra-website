@@ -3,6 +3,7 @@
 import { PROPERTIES, OFF_FILTERS, ON_FILTERS } from "@/data/properties";
 import { COPY } from "@/data/copy";
 import { siteConfig } from "@/config/site";
+import { mailtoHref } from "@/lib/mailto";
 import ChapterRail from "./ChapterRail";
 
 export default function StaticFallback() {
@@ -47,12 +48,17 @@ export default function StaticFallback() {
           <h2 className="text-3xl font-semibold tracking-tight">{COPY.contact.title}</h2>
           <p className="mt-2 text-sm text-ink/60">{COPY.contact.intro}</p>
           <a
-            href={`mailto:${siteConfig.email}`}
+            href={mailtoHref(siteConfig.email, COPY.contact.email)}
             className="mt-8 inline-block rounded-full bg-ink px-14 py-5 text-lg font-medium tracking-wide text-paper"
           >
             {COPY.contact.cta}
           </a>
-          <p className="mt-4 text-xs text-ink/50">{siteConfig.email}</p>
+          <p className="mt-4 text-xs text-ink/50">
+            {COPY.contact.other}{" "}
+            <a href={`mailto:${siteConfig.email}`} className="underline underline-offset-2 hover:text-ink">
+              {siteConfig.email}
+            </a>
+          </p>
           <p className="mt-10 text-[10px] text-ink/40">{COPY.footer}</p>
         </div>
       </section>

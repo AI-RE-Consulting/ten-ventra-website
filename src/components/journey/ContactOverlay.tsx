@@ -3,6 +3,7 @@
 import { motion, useTransform, type MotionValue } from "motion/react";
 import { COPY } from "@/data/copy";
 import { siteConfig } from "@/config/site";
+import { mailtoHref } from "@/lib/mailto";
 
 export default function ContactOverlay({ progress }: { progress: MotionValue<number> }) {
   const opacity = useTransform(progress, [0.88, 0.94], [0, 1]);
@@ -17,12 +18,17 @@ export default function ContactOverlay({ progress }: { progress: MotionValue<num
         <h2 className="text-3xl font-semibold tracking-tight">{COPY.contact.title}</h2>
         <p className="mt-2 text-sm text-ink/60">{COPY.contact.intro}</p>
         <a
-          href={`mailto:${siteConfig.email}`}
+          href={mailtoHref(siteConfig.email, COPY.contact.email)}
           className="mt-8 inline-block rounded-full bg-ink px-14 py-5 text-lg font-medium tracking-wide text-paper transition-transform duration-200 hover:scale-[1.03]"
         >
           {COPY.contact.cta}
         </a>
-        <p className="mt-4 text-xs text-ink/50">{siteConfig.email}</p>
+        <p className="mt-4 text-xs text-ink/50">
+          {COPY.contact.other}{" "}
+          <a href={`mailto:${siteConfig.email}`} className="underline underline-offset-2 hover:text-ink">
+            {siteConfig.email}
+          </a>
+        </p>
       </motion.div>
       <p className="absolute bottom-5 text-[10px] text-ink/40">{COPY.footer}</p>
     </motion.div>

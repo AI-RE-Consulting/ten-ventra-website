@@ -36,6 +36,30 @@ export const COPY = {
     title: "Tell us your buy-box.", // chosen 2026-08-12
     intro: "For deal opportunities, partnerships, or general inquiries.",
     cta: "Get in touch",
+    // Prefilled draft behind the button (chosen 2026-09-25). Plain text, one entry per line;
+    // the trailing space after each colon leaves room to type.
+    email: {
+      subject: "My buy-box for Ten Ventra",
+      body: [
+        "Hi Ten Ventra,",
+        "",
+        "Here's my buy-box:",
+        "",
+        "• Name / company: ",
+        "• Phone: ",
+        "• Markets (cities, counties or zips): ",
+        "• Asset types (single-family, multifamily, land...): ",
+        "• Price range: ",
+        "• Strategy (flip, hold, ADU / lot split, build): ",
+        "• Off market, on market, or both: ",
+        "• Must-haves or deal-breakers: ",
+        "",
+        "Good times for a 20-minute call: ",
+        "",
+        "Thanks,",
+      ],
+    },
+    other: "Something else?", // precedes the plain address, which opens a blank email
   },
   footer: `© ${new Date().getFullYear()} Ten Ventra, Inc.`,
 } as const;
